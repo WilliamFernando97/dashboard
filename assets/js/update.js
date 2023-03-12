@@ -107,23 +107,24 @@ let UpdateIndicators = () => {
       let  porcentaje_de_cambio_clientes =  ((valor_actual_clientes - valor_previo_clientes)*100/valor_previo_clientes).toFixed(2) ;
       let  porcentaje_de_cambio_ventas =  ((valor_actual_ventas - valor_previo_ventas)*100/valor_previo_ventas).toFixed(2) ;
 
-
       
 
 
+
+
       let message_Monto = 
-      `<p class="mb-0"><span class="text-sm text-success font-weight-bolder">${porcentaje_de_cambio_monto}%</span>${mensaje_tiempo_monto}</p>`;
+      `<p class="mb-0"><span class="text-sm ${porcentaje_de_cambio_monto < 0 ?  "text-danger" : "text-success"} font-weight-bolder">${porcentaje_de_cambio_monto}%</span>${mensaje_tiempo_monto}</p>`;
 
       let message_Usuarios = 
-      `<p class="mb-0"><span class="text-sm text-danger font-weight-bolder">${porcentaje_de_cambio_usuarios}%</span>${mensaje_tiempo_usuarios}</p>`;
+      `<p class="mb-0"><span class="text-sm ${porcentaje_de_cambio_usuarios < 0 ?  "text-danger" : "text-success"} font-weight-bolder">${porcentaje_de_cambio_usuarios}%</span>${mensaje_tiempo_usuarios}</p>`;
 
       let message_Clientes = 
-      `<p class="mb-0"><span class="text-sm text-success font-weight-bolder">${porcentaje_de_cambio_clientes}%</span>${mensaje_tiempo_clientes}</p>`;
+      `<p class="mb-0"><span class="text-sm ${porcentaje_de_cambio_clientes < 0 ?  "text-danger" : "text-success"} font-weight-bolder">${porcentaje_de_cambio_clientes}%</span>${mensaje_tiempo_clientes}</p>`;
 
       let message_Ventas = 
-      `<p class="mb-0"><span class="text-sm text-success font-weight-bolder">${porcentaje_de_cambio_ventas}%</span>${mensaje_tiempo_ventas}</p>`;
+      `<p class="mb-0"><span class="text-sm ${porcentaje_de_cambio_ventas < 0 ?  "text-danger" : "text-success"} font-weight-bolder">${porcentaje_de_cambio_ventas}%</span>${mensaje_tiempo_ventas}</p>`;
 
-//${clase_cambio}
+//${clase_cambio} text-danger /// text-success
 
       let listOfElements = document.getElementsByClassName('card-footer p-3') 
 
